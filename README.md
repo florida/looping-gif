@@ -4,8 +4,10 @@ looping-gif
 
 Run:
 
-`npm install`
-`npm run dev`
+```
+npm install
+npm run dev
+```
 
 Go to:
 
