@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "beefy index.js --live"
+    "dev": "beefy index.js --live",
+    "pyramid": "beefy pyramid.js --live"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,7 @@
     "ease-component": "^1.0.0",
     "gif.jsify": "^0.1.6",
     "isomer": "jdan/isomer",
+    "perlin-noise": "0.0.1",
     "raf": "^2.0.4"
   }
 }

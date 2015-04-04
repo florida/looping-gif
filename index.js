@@ -3,6 +3,7 @@ var Isomer = require('isomer') // 3ds
 var ease = require('ease-component') // easing
 var Color = require('color')
 var GIF = require('gif.jsify')
+var perlin = require('perlin-noise');
 
 
 // duration of loop / speed of animation
@@ -25,15 +26,18 @@ var Shape = Isomer.Shape
 var n_rows = 10
 var n_cols = n_rows
 
+var perlin_array = perlin.generatePerlinNoise(n_rows, n_rows);
+var perlin_2 =  perlin.generatePerlinNoise(n_rows, n_rows);
+
 // This will be called continuously with a p value (between 0 and 1) representing progress through our animation
 // e.g. when p == 0.5 we are 50% of the way through
 function render (p) {
   ctx.clearRect(0, 0, width, height)
   for (var row = n_rows; row >= 1; row--) {
     for(var col = 1; col <= n_cols; col++) {
-      var w = 1
-      var l = 1
-      var h = 0.2
+      var w = 1;
+      var l = 1;
+      var h = 0.2 ;
 
       var x = (row - n_rows / 2) * w
       var z = (col - n_rows / 2 ) * l
@@ -47,8 +51,8 @@ function render (p) {
 
       var cube = Isomer.Shape.Prism(pos, w, l, h).rotateX(Point(rx, ry, rz), Math.PI * p).rotateZ(Point(rx, rz, ry), 2 * Math.PI * p)
 
-      var sat = (p * 0.5 * row * col * 100) % 100
-      var color = Color().hsl(20 + col * 3, sat, 40)
+      var sat = (p * perlin_array[row] * 100) % 100
+      var color = Color().hsl(20 + perlin_array[col] * 10, sat, 40)
       var isomercolor = new Isomer.Color(color.red(), color.green(), color.blue())
       iso.add(cube, isomercolor)
     }
