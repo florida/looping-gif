@@ -1,14 +1,9 @@
-looping-gif
-===========
+# Looping Gif
 
-
-Run:
+Run Locally
 
 ```
-npm install
+npm intall
 npm run dev
 ```
 
-Go to:
-
-localhost:9966
