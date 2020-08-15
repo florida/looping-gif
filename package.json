@@ -1,22 +1,24 @@
 {
-  "name": "gif-loops",
+  "name": "webpack-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "dev": "beefy index.js --live",
-    "pyramid": "beefy pyramid.js --live"
+    "dev": "webpack --watch",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
   "dependencies": {
-    "beefy": "^2.1.1",
-    "browserify": "^7.0.0",
-    "color": "^0.7.3",
-    "ease-component": "^1.0.0",
-    "gif.jsify": "^0.1.6",
-    "isomer": "jdan/isomer",
+    "color": "^3.1.2",
+    "isomer": "^0.2.6",
     "perlin-noise": "0.0.1",
-    "raf": "^2.0.4"
+    "raf": "^3.4.1"
   }
 }
