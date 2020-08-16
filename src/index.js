@@ -63,8 +63,8 @@ function render (p) {
 
       var cube = Shape.Prism(pos, w, l, h); 
 
-      cube = cube.rotateX(Point(rx, ry, rz), Math.sin( p * perlin_array_2[row]))
-      cube = cube.rotateZ(Point(rx, rz, ry), rotationZ * p * perlin_array[col]);
+      cube = cube.rotateX(Point(rx, ry, rz), Math.sin( p * perlin_array[row]))
+      cube = cube.rotateZ(Point(rx, rz, ry), Math.tan( p * perlin_array[col]));
 
       var color = colorGenerator(p, row, col);
       var isomercolor = new Isomer.Color(color.red(), color.green(), color.blue())
